@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<title>book IT</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		{%block meta%}
+		{%endblock%}
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="/">bookIT <span>by CDrits</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/mainUI/srvgroups/">Available Services</a></li>					
+					{% if user.is_authenticated %}
+						<li><a href="{% url 'mainUI:user_profile' %}"> My bookIT: {{user.first_name}}</a></li>
+						<li><a href="{% url 'auth_logout' %}?next=/mainUI/">Logout</li>
+					{% else %}
+						<li><a href="{% url 'auth_login' %}"> Login</a></li>
+						<li><a href="{% url 'mainUI:register_customer' %}">Register</a></li>
+					{% endif %}					
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>This is bookIT</h1>
+						<p>Todays life is fast!<br/>Book any service you wish in a heartbeat!<br />Fast. Easy. Secure.</p>
+					</header>
+					<a href="#main" class="button big scrolly">Learn More</a>
+				</div>
+			</section>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+										<div class="image round fit">
+											<a href="#" class="link"><img src="/static/images/pic07.jpg" alt="" /></a>
+										</div>
+									</div>
+									<div class="col col2">
+										<h3>What is bookIT?</h3>
+										<p>bookIT comes to close the gap between today's people needs for services and startup companies that can provide the best quality of service and prices.</p>
+										<h3>What bookIT does for you</h3>
+										<p>Browse through numerous service categories!<br/> Select the service you wish to enjoy! <br/>See the providers ...... and bookIT!</p>
+										<a href="{% url 'mainUI:about' %}" class="button">Learn More</a>   <a href="/mainUI/srvgroups/" class="button">See Available Services</a>
+									</div>
+								</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style2">
+						<div class="inner">
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Be a part of bookIT</h3>
+									<p>Join us to book the services you wish! Easy. Fast. Secure.</p>
+									<p> </p>
+									<a href="{% url 'mainUI:register_customer' %}" class="button">Join Us Today!</a>
+								</div>
+								<div class="col col1 first">
+									<div class="image round fit">
+										<a href="#" class="link"><img src="/static/images/joinus.jpg" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Success stories</h2>
+								<p>Find out more about how bookIT can help you grow and make your life easier! </p>
+							</header>
+							<div class="flex flex-3">
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="/static/images/spa.jpg" alt="" />
+									</div>
+									<p><strong>Nick, Spa &amp Beauty Studio</strong><br/>“Picking phone calls when having a costumer in is a nightmare. </br>bookIT allows me to manage my bookings when I am not busy! I am no more losing clients because I can't pick up my phone! </p>
+									<a href="/mainUI/success_stories/0" class="button">Learn More</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="/static/images/pic05.jpg" alt="" />
+									</div>
+									<p><strong>Vera, Vera Nails</strong> <br/>“bookIT makes everything simple. Every time a booking is made, all I need is to click a button to confirm it. It is simple and fast! My customers love it as well!</br>Thank you bookIT!"
+ 									</p>
+									<a href="/mainUI/success_stories/1" class="button">Learn More</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="/static/images/pic04.jpg" alt="" />
+									</div>
+									<p><strong>Emil, student </strong><br/> “bookIT makes booking an appointment a piece of cake! I can search for local services and pick the provider that I like.</br> Being a shy person, I can avoid awkward telephone conversations!”
+									</p>
+									<a href="/mainUI/success_stories/2" class="button">Learn More</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					{%block content%}
+					{%endblock%}
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>bookIT by CDrits. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+{% load render_table from django_tables2 %}
+
+{% block image %}
+
+    <img src="/static/images/pic09.jpg" alt="" />
+
+{% endblock %}
+
+{% block available_services %}
+
+
+<div>
+Hello <strong>{{user.first_name}}</strong>, these are your upcoming <strong>bookITs!</strong><br/><br/>
+<a href="/mainUI/user_profile/" class="button"> &lt Back</a>
+
+</div>
+<br/><br/>
+<div>
+    {% render_table table %}
+</div> 
+{% endblock %}
+
+{% block asbuttons%}
+
+	
+{% endblock %}

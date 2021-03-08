@@ -1,0 +1,15 @@
+<h3>Customer</h3>
+    <form role="form" method="post" action="./register-customer">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ customer_form.as_p }}
+        <input type="submit" value="Register" />
+    </form>   
+
+<h3>Provider</h3>
+    <form role="form" method="post" action="./register-provider">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ provider_form.as_p }}
+        <input type="submit" value="Register" />
+    </form>

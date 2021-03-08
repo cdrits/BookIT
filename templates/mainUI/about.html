@@ -1,0 +1,34 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+{% load staticfiles %}
+
+{% block image %}
+
+    <img src="/static/images/about.jpg" alt="" />
+
+{% endblock %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block available_services %}
+    
+    <div>
+    <br><br>
+    <h2>What is bookIT?</h2>
+        <strong>The goal of bookIT</strong> is to provide a common place for hired services and 
+        facilitate the procedure of making a booking. </br></br>If you are a <strong>customer</strong>, <a href="{% url 'mainUI:register_customer' %}">join bookIT</a> and 
+        discover how you can enjoy services in a heartbeat! </br>bookIT with us and find out about the 
+        amazing services that our trusted providers can offer for you!</br></br>
+        If you are a <strong>service provider</strong>, see your appointments skyrocket! </br> 
+        <a href="{% url 'mainUI:register_provider' %}">Join bookIT</a> and access
+        thousands of customers! Be a part of bookIT and discover all the ways that bookIT can help your business take off!
+
+    </div>
+    <br><br><br><br>
+    <div>
+    <p>
+	<a href="/mainUI/" class="button"> Home</a>
+
+    </p>
+    </div>
+{% endblock %}

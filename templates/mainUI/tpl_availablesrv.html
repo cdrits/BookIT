@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>book IT</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/static/assets/css/main.css" />
+
+<!-- DateTime links-->
+	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+</head>
+
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="/">book IT
+				<span>by CDrits</span>
+			</a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/mainUI/srvgroups/">Available Services</a>
+			</li>
+			{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'mainUI:user_profile' %}"> My bookIT: {{user.first_name}}</a>
+				</li>
+					<li><a href="{% url 'auth_logout' %}?next=/mainUI/">Logout</a>
+				</li>
+			{% else %}
+			<li>
+				<a href="{% url 'auth_login' %}"> Login</a>
+			</li>
+			<li>
+				<a href="{% url 'mainUI:register_customer' %}">Register</a>
+			</li>
+			{% endif %}		
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Section -->
+		<section class="wrapper">
+			<div class="inner">
+				<header class="align-center">
+					<h1>{{title}}</h1>
+					<p>{{subtitle}}</p>
+				</header>
+				<div class="flex flex-2">
+					<div class="col col1 first">
+						<div class="image round fit">
+							<a href="#" class="link">
+							{% block image %}
+							{% endblock %}
+							</a>
+						</div>
+						
+					</div>
+
+					<div class="col col2">
+						{% block available_services %}						
+						{%endblock%}
+					</div>
+
+				</div>
+				   {% block asbuttons%}
+				   {%endblock%}	
+			</div>
+
+		</section>
+
+		
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="copyright">
+			<ul class="icons">
+				<li>
+					<a href="#" class="icon fa-twitter">
+						<span class="label">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-facebook">
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-instagram">
+						<span class="label">Instagram</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-snapchat">
+						<span class="label">Snapchat</span>
+					</a>
+				</li>
+			</ul>
+			<p>&copy; Untitled. All rights reserved. Design:
+				<a href="https://templated.co">TEMPLATED</a>. Images:
+				<a href="https://unsplash.com">Unsplash</a>.</p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="/static/assets/js/jquery.min.js"></script>
+	<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+	<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/static/assets/js/skel.min.js"></script>
+	<script src="/static/assets/js/util.js"></script>
+	<script src="/static/assets/js/main.js"></script>
+
+	<!-- DateTime script -->
+	<script src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+	<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//cdn.bootcss.com/moment.js/2.17.1/moment.min.js"></script>
+	<script src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/js/bootstrap-datetimepicker.min.js"></script>
+	
+	<script>
+		$(function () {
+			$('.datetime-input').datetimepicker({
+				format:'YYYY-MM-DD HH:mm'
+			});
+		});
+	</script>
+
+</body>
+
+</html>

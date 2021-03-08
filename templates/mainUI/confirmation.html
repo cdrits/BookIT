@@ -1,0 +1,28 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+
+{% block image %}
+
+    <img src="/static/images/tick.jpg" alt="" />
+
+{% endblock %}
+
+{% block available_services %}
+
+
+<div class="align-center">
+	<h1>Great!</h1>
+	<h4>The date you have selected is available!</h4>
+	</br></br>
+	<a href="/mainUI/request_booking" class="button" style="width:50%">  bookIT! </a>
+</div>
+
+{% endblock %}
+
+
+{% block asbuttons %}
+<p>
+	<a href="/mainUI/{{ selected_service }}" class="button"> Home</a> 
+	
+
+</p>
+{% endblock%}

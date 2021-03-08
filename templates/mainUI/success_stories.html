@@ -1,0 +1,56 @@
+{% extends 'mainUI/tpl_availablesrv.html' %} 
+
+{% block image %}
+
+    {% if id == '0' %}
+    <img src="/static/images/spa.jpg" alt="" />
+    {% elif id == '1' %}
+    <img src="/static/images/pic02.jpg" alt="" />
+    {% elif id == '2' %}
+    <img src="/static/images/pic04.jpg" alt="" />
+    {% endif %}
+    
+{% endblock %}
+
+{% block available_services %}
+
+{% if id == '0' %}
+<p>
+<h3><strong>Nick Rocket,<br/> owner of Nick's Spa &amp Beauty Studio </strong></h3><br/><br/>
+“Picking phone calls when having a costumer in is a nightmare. 
+</br><strong>bookIT</strong> allows me to manage my bookings when I am not busy! 
+with <strong>bookIT</strong> I am no longer losing clients because I can't pick up my phone!
+</p>
+
+{% elif id == '1' %}
+<p>
+<h3><strong>Vera Nailson, owner of Vera Nails </strong></h3><br/><br/>
+“Using <strong>bookIT</strong> I can have an updated profile on 
+    which all my bookings are clearly shown. <strong>bookIT</strong> also saved me
+    plenty of time. Anytime a booking is made, I just need to 
+    click on a button to either confirm or decline it.<br/><br/>
+    Although I was quite sceptical, at first, about using an 
+    application for handling my bookings, I was really fast 
+    convinced that it was an initiative that facilitates booking 
+    management. <br/><br/>So far, I was keeping bookings in written, resulting 
+    to a complete confusion, but now, using <strong>bookIT</strong> I can have 
+    an updated profile on which all my bookings are clearly shown. 
+    <strong>bookIT</strong> also saved me plenty of time. Anytime a booking is made, 
+    I just need to click on a button to either confirm or decline it.”
+</p>
+{% elif id == '2' %}
+
+<p>
+<h3><strong>Emil, Student </strong></h3><br/><br/>
+“I'm a student in Glasgow. When I was a newcomer,
+I didn't know of any places to do the simplest things, like having my hair cut. 
+<strong>bookIT</strong> allowed me to browse services and find the one I wanted with just a couple of clicks. <br/><br/>
+    In the first weeks of settling in a city and country I have never been before, 
+    I didn't have a telephone number set up, so making a booking was impossible unless 
+    I walked in the shop in person. Being a very shy character, <strong>bookIT</strong> has helped 
+    me book my appointments without going through the painful, for me, procedure of a phone call. 
+    I saved time, money and I can confidently book any appointment and enjoy amazing services!
+    Thank you <strong>bookIT</strong>!”
+</p>
+{% endif %}
+{% endblock %}

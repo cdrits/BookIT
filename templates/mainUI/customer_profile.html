@@ -1,0 +1,29 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+
+{% block image %}
+
+    <img src="/static/images/userimage.png" alt="" />
+
+{% endblock %}
+
+{% block available_services %}
+
+<div>
+Hello <strong>{{user.first_name}}!</strong><br/><br/>
+
+<strong>Username:</strong> {{user.username}} <br/><br/>
+<strong>Email:</strong> {{user.email}} <br/><br/>
+<strong>Phone:</strong> {{customer.customer_phone}}<br/><br/>
+
+<a href="/mainUI/pending_bookings" class="button"> Pending Booking Requests </a>
+<a href="/mainUI/upcoming_bookings" class="button"> Upcoming Bookings </a>
+
+</div>
+
+{% endblock %}
+
+{% block asbuttons%}
+
+<a href="/mainUI/" class="button"> Home </a>
+	
+{% endblock %}

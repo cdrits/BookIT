@@ -1,0 +1,31 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+
+{% block image %}
+
+    <img src="/static/images/pic09.jpg" alt="" />
+
+{% endblock %}
+
+{% block available_services %}
+
+    <div>
+        <h3> Login </h3>
+    </div>
+    
+    <form role="form" method="post" action=".">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}" />
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" name="username" id="id_username" class="form-control"placeholder="Username" required autofocus>
+        <br/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="id_password" class="form-control"
+            placeholder="Password" required>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"
+            value="Submit" />Sign in</button>
+        <br/>
+        Not a member? <a href="{% url 'mainUI:register_customer' %}" style="color:blue">Join Us today!!</a>
+    </form>
+    
+{% endblock %}

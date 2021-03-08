@@ -1,0 +1,31 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+
+{% block image %}
+
+    <img src="/static/images/calendar.png" alt="" />
+
+{% endblock %}
+
+{% block available_services %} 
+    <div>
+
+    <form role="form" method="post" action=".">
+        {% csrf_token %}
+        
+        {{ datepick_form.as_p }}
+        
+        {{ msg }}
+        
+        <br/>   <br/>  
+        <input type="submit", value="Check Date" />
+    </form>
+
+    </div>
+{% endblock %}
+
+{% block asbuttons %}
+<p>
+	<a href="/mainUI/srvproviders/{{ selected_service }}" class="button"> &lt Back</a>
+
+</p>
+{% endblock%}

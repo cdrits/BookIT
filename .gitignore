@@ -1,0 +1,14 @@
+mainUI/migrations/*
+settings.py
+htmlcov/*
+populate_bookit.py
+*.xml
+*.iml
+*.key
+*.whl
+mainUI/__pycache__
+*.pyc
+.coverage
+migrations
+__pycache__
+htmlcov

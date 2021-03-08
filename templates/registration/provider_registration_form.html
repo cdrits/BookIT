@@ -1,0 +1,25 @@
+{% extends 'mainUI/tpl_availablesrv.html' %}
+
+{% block image %}
+
+    <img src="/static/images/joinus.jpg" alt="" />
+
+{% endblock %}
+
+{% block available_services %}						
+
+    <h1>Join Us!</h1>
+    <a href="{% url 'mainUI:register_customer' %}"> Are you a customer? 
+    <font color="blue">Register Here!</font>
+    </a>
+    <br/><br/>
+
+    <div>
+    <form role="form" method="post" action="./register-provider">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ provider_form.as_p }}
+        <input type="submit" value="Register" />
+    </form>     
+    </div>
+{% endblock %}

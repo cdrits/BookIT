@@ -1,0 +1,36 @@
+{% extends 'mainUI/tpl_availablesrv.html' %} 
+
+{% block image %}
+
+    <img src="/static/images/select.jpg" alt="" />
+
+{% endblock %}
+
+{% block available_services %}
+<ul>
+	{% if services %} 
+	
+	{% for srv in services %}
+	<li class="collection-item">
+		<h4>
+			<a href="/mainUI/srvproviders/{{srv.id}}"> {{srv.service_name}}</a>
+		</h4>
+	</li>
+	{% endfor %} 
+	
+	{% else %}
+	<li class="collection-item">
+		<h4>There are currently no services available!</h4>
+	</li>
+	{% endif %}
+</ul>
+{%endblock%} 
+
+
+
+{% block asbuttons %}
+<p>
+	<a href="/mainUI/srvgroups/" class="button"> &lt; Back</a>
+
+</p>
+{% endblock%}
